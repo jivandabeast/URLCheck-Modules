@@ -1,0 +1,13 @@
+{
+  "name": "Reddit ➔ Redlib",
+  "description": "Opens Reddit links in a Redlib instance. Change 'redlib.example.org' to the instance you use.",
+  "regex": "^https?://(?:[a-z0-9-]+\\.)*?reddit\\.com/",
+  "actions": [
+    {
+      "type": "replace",
+      "label": "Open in Redlib",
+      "regex": "^https?://(?:[a-z0-9-]+\\.)*?reddit\\.com/(.*)",
+      "replacement": "https://redlib.example.org/$1"
+    }
+  ]
+}

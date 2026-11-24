@@ -1,0 +1,21 @@
+{
+  "name": "Wayback Machine",
+  "description": "Shows the latest Wayback Machine snapshot of the URL, and lets you open it.",
+  "regex": "^https?://",
+  "actions": [
+    {
+      "type": "request",
+      "label": "Archived?",
+      "url": "https://archive.org/wayback/available?url=$URL_ENCODED$",
+      "extract": "archived_snapshots.closest.timestamp",
+      "display": "Last snapshot: $RESULT$"
+    },
+    {
+      "type": "request",
+      "label": "Go to snapshot",
+      "url": "https://archive.org/wayback/available?url=$URL_ENCODED$",
+      "extract": "archived_snapshots.closest.url",
+      "setUrl": true
+    }
+  ]
+}
