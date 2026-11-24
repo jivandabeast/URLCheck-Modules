@@ -1,0 +1,13 @@
+{
+  "name": "Page title",
+  "description": "Downloads the page (only when you press the button) and shows its title.",
+  "regex": "^https?://",
+  "actions": [
+    {
+      "type": "request",
+      "label": "Get title",
+      "url": "$URL$",
+      "extractRegex": "<title[^>]*>([^<]*)</title>"
+    }
+  ]
+}

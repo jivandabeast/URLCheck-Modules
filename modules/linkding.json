@@ -1,0 +1,16 @@
+{
+  "name": "Linkding",
+  "description": "Saves the URL as a bookmark in your Linkding instance. After importing, replace 'linkding.example.org' and 'YOUR_TOKEN' in the Json editor.",
+  "regex": "^https?://",
+  "actions": [
+    {
+      "type": "request",
+      "label": "Bookmark",
+      "url": "https://linkding.example.org/api/bookmarks/",
+      "headers": { "Authorization": "Token YOUR_TOKEN" },
+      "body": "{\"url\": \"$URL$\"}",
+      "extract": "id",
+      "display": "Saved (#$RESULT$)"
+    }
+  ]
+}
